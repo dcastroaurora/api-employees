@@ -1,0 +1,29 @@
+GET http://localhost:3000/api/employees?size=5&page=0&name=Diego
+
+###
+POST http://localhost:3000/api/employees
+Content-Type: application/json
+
+{
+    "name": "Sheyla",
+    "position": "Senior QA",
+    "salary": 90000,
+    "office": "La Molina"
+}
+
+###
+GET http://localhost:3000/api/employees/5fffe5fc87236298f63ab4a5
+
+###
+DELETE  http://localhost:3000/api/employees/5fffe5fc87236298f63ab4a5
+
+###
+PUT http://localhost:3000/api/employees/5fffe56cbed3eb3341687ce8
+Content-Type: application/json
+
+{
+    "name": "Josue",
+    "position": "Senior Angular",
+    "salary": 500000,
+    "office": "Magdalena del Mar"
+}
