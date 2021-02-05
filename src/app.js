@@ -6,7 +6,7 @@ import EmployeesRoutes from "./routes/employees.routes";
 const app = express();
 
 //settings
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 5000);
 
 //middlewares
 app.use(cors());

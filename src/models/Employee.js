@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 import paginate from "mongoose-paginate-v2";
 
-const employeeSchema = new Schema(
+const schema = new Schema(
   {
     name: {
       type: String,
@@ -27,5 +27,12 @@ const employeeSchema = new Schema(
   }
 );
 
-employeeSchema.plugin(paginate);
-export default model("Employee", employeeSchema);
+schema.method("toJSON", function () {
+  const { _id, ...object } = this.toObject();
+  object.id = _id;
+  return object;
+});
+
+schema.plugin(paginate);
+
+export default model("Employee", schema);
